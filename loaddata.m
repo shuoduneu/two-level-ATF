@@ -1,0 +1,159 @@
+function [sig,para]=loaddata(para)
+% load data
+
+dir=para.dir;
+
+
+% RADI=load([dir,'\Radi20140702Yangyinan.mat']);
+% S{1}=[RADI.RADI(:,1)/10,RADI.RADI(:,3)/10-0.441875];
+% % RADI=load([dir,'\Radi20140709Tongpengshuai.mat']);
+% % S{end+1}=[RADI.RADI(:,1)/10,RADI.RADI(:,3)/10-0.22363];
+% RADI=load([dir,'\Radi20140709Zhangyajun.mat']);
+% S{end+1}=[RADI.RADI(:,1)/10,RADI.RADI(:,3)/10+0.014634];
+% % RADI=load([dir,'\Radi20140716Wangjingjing.mat']);
+% % S{end+1}=[RADI.RADI(:,1)/10,RADI.RADI(:,3)/10-0.019895];
+% RADI=load([dir,'\Radi20141114Lanxinyong.mat']);
+% S{end+1}=[RADI.RADI(:,1)/10,RADI.RADI(:,3)/10-0.81212];
+% RADI=load([dir,'\Radi20141117Wangjingwen.mat']);
+% S{end+1}=[RADI.RADI(:,1)/10,RADI.RADI(:,3)/10-0.69814];
+% RADI=load([dir,'\Radi20141117Wufengxiang.mat']);
+% S{end+1}=[RADI.RADI(:,1)/10,RADI.RADI(:,3)/10+0.2590565];
+% RADI=load([dir,'\Radi20141119Changwenjing.mat']);
+% S{end+1}=[RADI.RADI(:,1)/10,RADI.RADI(:,3)/10-2.1909];
+% RADI=load([dir,'\Radi20141119Mashuxian.mat']);
+% S{end+1}=[RADI.RADI(:,1)/10,RADI.RADI(:,3)/10+1.3739];
+% % RADI=load([dir,'\Radi20141124Wangxingyan.mat']);
+% % S{end+1}=[RADI.RADI(:,1)/10,RADI.RADI(:,3)/10+0.42862];
+% RADI=load([dir,'\Radi20141125Lijingfen.mat']);
+% S{end+1}=[RADI.RADI(:,1)/10,RADI.RADI(:,3)/10+0.34859];
+% RADI=load([dir,'\Radi20141126Jintao.mat']);
+% S{end+1}=[RADI.RADI(:,1)/10,RADI.RADI(:,3)/10+1.1743];
+% RADI=load([dir,'\Radi20141126Xiaoguoyun.mat']);
+% S{end+1}=[RADI.RADI(:,1)/10,RADI.RADI(:,3)/10+0.65202];
+% RADI=load([dir,'\Radi20141128Lixiulian.mat']);
+% S{end+1}=[RADI.RADI(:,1)/10,RADI.RADI(:,3)/10-0.07906];
+% RADI=load([dir,'\Radi20141128Zhangjinxi.mat']);
+% S{end+1}=[RADI.RADI(:,1)/10,RADI.RADI(:,3)/10+0.259415];
+% % RADI=load([dir,'\Radi20141203Fuhong.mat']);
+% % S{end+1}=[RADI.RADI(:,1)/10,RADI.RADI(:,3)/10-0.20833];
+% RADI=load([dir,'\Radi20141205Yangli.mat']);
+% S{end+1}=[RADI.RADI(:,1)/10,RADI.RADI(:,3)/10+1.8751];
+% RADI=load([dir,'\Radi20150107Juqi.mat']);
+% S{end+1}=[RADI.RADI(:,1)/10,RADI.RADI(:,3)/10];
+% RADI=load([dir,'\Radi20150107Yuhaiping.mat']);
+% S{end+1}=[RADI.RADI(:,1)/10,RADI.RADI(:,3)/10-0.51561];
+% RADI=load([dir,'\Radi20150112Lvsuyan.mat']);
+% S{end+1}=[RADI.RADI(:,1)/10,RADI.RADI(:,3)/10];
+% RADI=load([dir,'\Radi20150112Naliying.mat']);
+% S{end+1}=[RADI.RADI(:,1)/10,RADI.RADI(:,3)/10];
+% % RADI=load([dir,'\Radi20150116Gewenqing.mat']);
+% % S{end+1}=[RADI.RADI(:,1)/10,RADI.RADI(:,3)/10];
+% % RADI=load([dir,'\Radi20150128Qianjun.mat']);
+% % S{end+1}=[RADI.RADI(:,1)/10,RADI.RADI(:,3)/10-1.8272];
+% RADI=load([dir,'\Radi20150128Yurongyan.mat']);
+% S{end+1}=[RADI.RADI(:,1)/10,RADI.RADI(:,3)/10];
+% RADI=load([dir,'\Radi20150204Chenyuwen.mat']);
+% S{end+1}=[RADI.RADI(:,1)/10,RADI.RADI(:,3)/10];
+% RADI=load([dir,'\Radi20150204Fuenlong.mat']);
+% S{end+1}=[RADI.RADI(:,1)/10,RADI.RADI(:,3)/10+0.30758];
+% RADI=load([dir,'\Radi20150204Lianglijun.mat']);
+% S{end+1}=[RADI.RADI(:,1)/10,RADI.RADI(:,3)/10];
+% % RADI=load([dir,'\Radi20150204Yangchangsheng.mat']);
+% % S{end+1}=[RADI.RADI(:,1)/10,RADI.RADI(:,3)/10];
+% RADI=load([dir,'\Radi20150304Qiutianhe.mat']);
+% S{end+1}=[RADI.RADI(:,1)/10,RADI.RADI(:,3)/10];
+% RADI=load([dir,'\Radi20150304Tongye.mat']);
+% S{end+1}=[RADI.RADI(:,1)/10,RADI.RADI(:,3)/10];
+% % RADI=load([dir,'\Radi20150304Zhangsufan.mat']);
+% % S{end+1}=[RADI.RADI(:,1)/10,RADI.RADI(:,3)/10];
+% % RADI=load([dir,'\Radi20150305Liuyaobin.mat']);
+% % S{end+1}=[RADI.RADI(:,1)/10,RADI.RADI(:,3)/10];
+% % RADI=load([dir,'\Radi20150211Zhangshulan.mat']);
+% % S{end+1}=[RADI.RADI(:,1)/10,RADI.RADI(:,3)/10];
+
+RADI=load([dir,'\Radi20140702Yangyinan.mat']);
+S{1}=[RADI.RADI(:,1)/10,RADI.RADI(:,3)/10-0.441875];
+RADI=load([dir,'\Radi20140709Tongpengshuai.mat']);
+S{end+1}=[RADI.RADI(:,1)/10,RADI.RADI(:,3)/10-0.22363];
+RADI=load([dir,'\Radi20140709Zhangyajun.mat']);
+S{end+1}=[RADI.RADI(:,1)/10,RADI.RADI(:,3)/10+0.014634];
+RADI=load([dir,'\Radi20140716Wangjingjing.mat']);
+S{end+1}=[RADI.RADI(:,1)/10,RADI.RADI(:,3)/10-0.019895];
+RADI=load([dir,'\Radi20141114Lanxinyong.mat']);
+S{end+1}=[RADI.RADI(:,1)/10,RADI.RADI(:,3)/10-0.81212];
+RADI=load([dir,'\Radi20141117Wangjingwen.mat']);
+S{end+1}=[RADI.RADI(:,1)/10,RADI.RADI(:,3)/10-0.69814];
+RADI=load([dir,'\Radi20141117Wufengxiang.mat']);
+S{end+1}=[RADI.RADI(:,1)/10,RADI.RADI(:,3)/10+0.2590565];
+RADI=load([dir,'\Radi20141119Changwenjing.mat']);
+S{end+1}=[RADI.RADI(:,1)/10,RADI.RADI(:,3)/10-2.1909];
+RADI=load([dir,'\Radi20141119Mashuxian.mat']);
+S{end+1}=[RADI.RADI(:,1)/10,RADI.RADI(:,3)/10+1.3739];
+RADI=load([dir,'\Radi20141124Wangxingyan.mat']);
+S{end+1}=[RADI.RADI(:,1)/10,RADI.RADI(:,3)/10+0.42862];
+RADI=load([dir,'\Radi20141125Lijingfen.mat']);
+S{end+1}=[RADI.RADI(:,1)/10,RADI.RADI(:,3)/10+0.34859];
+RADI=load([dir,'\Radi20141126Jintao.mat']);
+S{end+1}=[RADI.RADI(:,1)/10,RADI.RADI(:,3)/10+1.1743];
+RADI=load([dir,'\Radi20141126Xiaoguoyun.mat']);
+S{end+1}=[RADI.RADI(:,1)/10,RADI.RADI(:,3)/10+0.65202];
+RADI=load([dir,'\Radi20141128Lixiulian.mat']);
+S{end+1}=[RADI.RADI(:,1)/10,RADI.RADI(:,3)/10-0.07906];
+RADI=load([dir,'\Radi20141128Zhangjinxi.mat']);
+S{end+1}=[RADI.RADI(:,1)/10,RADI.RADI(:,3)/10+0.259415];
+RADI=load([dir,'\Radi20141203Fuhong.mat']);
+S{end+1}=[RADI.RADI(:,1)/10,RADI.RADI(:,3)/10-0.20833];
+RADI=load([dir,'\Radi20141205Yangli.mat']);
+S{end+1}=[RADI.RADI(:,1)/10,RADI.RADI(:,3)/10+1.8751];
+RADI=load([dir,'\Radi20150107Juqi.mat']);
+S{end+1}=[RADI.RADI(:,1)/10,RADI.RADI(:,3)/10];
+RADI=load([dir,'\Radi20150107Yuhaiping.mat']);
+S{end+1}=[RADI.RADI(:,1)/10,RADI.RADI(:,3)/10-0.51561];
+RADI=load([dir,'\Radi20150112Lvsuyan.mat']);
+S{end+1}=[RADI.RADI(:,1)/10,RADI.RADI(:,3)/10];
+RADI=load([dir,'\Radi20150112Naliying.mat']);
+S{end+1}=[RADI.RADI(:,1)/10,RADI.RADI(:,3)/10];
+RADI=load([dir,'\Radi20150116Gewenqing.mat']);
+S{end+1}=[RADI.RADI(:,1)/10,RADI.RADI(:,3)/10];
+RADI=load([dir,'\Radi20150128Qianjun.mat']);
+S{end+1}=[RADI.RADI(:,1)/10,RADI.RADI(:,3)/10-1.8272];
+RADI=load([dir,'\Radi20150128Yurongyan.mat']);
+S{end+1}=[RADI.RADI(:,1)/10,RADI.RADI(:,3)/10];
+RADI=load([dir,'\Radi20150204Chenyuwen.mat']);
+S{end+1}=[RADI.RADI(:,1)/10,RADI.RADI(:,3)/10];
+RADI=load([dir,'\Radi20150204Fuenlong.mat']);
+S{end+1}=[RADI.RADI(:,1)/10,RADI.RADI(:,3)/10+0.30758];
+RADI=load([dir,'\Radi20150204Lianglijun.mat']);
+S{end+1}=[RADI.RADI(:,1)/10,RADI.RADI(:,3)/10];
+RADI=load([dir,'\Radi20150204Yangchangsheng.mat']);
+S{end+1}=[RADI.RADI(:,1)/10,RADI.RADI(:,3)/10];
+RADI=load([dir,'\Radi20150304Qiutianhe.mat']);
+S{end+1}=[RADI.RADI(:,1)/10,RADI.RADI(:,3)/10];
+RADI=load([dir,'\Radi20150304Tongye.mat']);
+S{end+1}=[RADI.RADI(:,1)/10,RADI.RADI(:,3)/10];
+RADI=load([dir,'\Radi20150304Zhangsufan.mat']);
+S{end+1}=[RADI.RADI(:,1)/10,RADI.RADI(:,3)/10];
+RADI=load([dir,'\Radi20150305Liuyaobin.mat']);
+S{end+1}=[RADI.RADI(:,1)/10,RADI.RADI(:,3)/10];
+RADI=load([dir,'\Radi20150211Zhangshulan.mat']);
+S{end+1}=[RADI.RADI(:,1)/10,RADI.RADI(:,3)/10];
+RADI=load([dir,'\Radi20150105Xiaohongbin.mat']);
+S{end+1}=[RADI.RADI(:,1)/10,RADI.RADI(:,3)/10];
+
+
+
+% save signals in 'sig'
+para.Nsubj=length(S);
+for ii=1:length(S)
+    sig.raw{ii}.aorta=S{ii}(:,1);
+    sig.raw{ii}.brachial=S{ii}(:,2);
+end
+
+% interpolate the raw signals
+if para.load.interpFlag
+    para.fs=para.fs*para.load.interpFactor;
+    for ii=1:length(S)
+        sig.raw{ii}.aorta=interp(sig.raw{ii}.aorta,para.load.interpFactor);
+        sig.raw{ii}.brachial=interp(sig.raw{ii}.brachial,para.load.interpFactor);
+    end
+end
